@@ -134,6 +134,13 @@ const mark = async () => {
       }
     }
 
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = today.getMonth() + 1; // 0埋めしない
+    const dd = today.getDate();      // 0埋めしない
+    const dateBracket = `[${yyyy}/${mm}/${dd}]`;
+    headerLines.push(dateBracket);
+
     headerLines.push(
       `#annopage [${decodeURI(getAnnolink(getCanonicalURL()))}]`,
       ""
